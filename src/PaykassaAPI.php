@@ -3,7 +3,7 @@
 namespace Paykassa;
 class PaykassaAPI
 {
-    private $version = "0.9";
+    private $version = "0.8";
 
     private $url;
     private $params;
@@ -351,7 +351,7 @@ class PaykassaAPI
         return $this->query($this->url, [
                 "func" => "api_payment",
             ] + [
-                "shop_id" => $merchant_id,
+                "shop" => $merchant_id,
                 "number" => $wallet["address"] ?? "",
                 "tag" => $wallet["tag"] ?? "",
                 "amount" => $amount,
